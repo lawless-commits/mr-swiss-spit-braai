@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mr Swiss Spit Braai Services | Spit Braai Catering in Midrand &amp; Gauteng</title>
+<meta name="description" content="Slow-roasted spit braais, generous sides and friendly on-site service for birthdays, weddings, memorials and corporate events across Midrand, Johannesburg and Pretoria. 5.0-star Google rating.">
+<meta name="theme-color" content="#1f2326">
+<style>
+  :root {
+    --charcoal: #1f2326;
+    --slate: #2c3237;
+    --ember: #b8441c;        /* white text on this = 5.4:1 */
+    --ember-dark: #933514;
+    --flame: #f39a5b;        /* accent on dark backgrounds */
+    --cream: #faf6f1;
+    --sand: #f1e8de;
+    --ink: #22201e;
+    --muted: #5c5650;
+    --line: #e2d7cb;
+    --wa: #1a7f44;           /* WhatsApp green, darkened for contrast */
+    --radius: 14px;
+    --shadow: 0 6px 24px rgb(31 35 38 / .08);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--cream); }
+  h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; font-family: Georgia, "Times New Roman", serif; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+  p { margin: 0 0 1em; }
+  a { color: var(--ember); }
+  img { max-width: 100%; display: block; }
+  :focus-visible { outline: 3px solid var(--flame); outline-offset: 2px; }
+  .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+  section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; color: var(--ember); margin-bottom: .5rem; }
+  .lead { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 1rem; top: 1rem; z-index: 99; background: #fff; padding: .5rem 1rem; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .85rem 1.4rem; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-size: 1rem; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--ember); color: #fff; } .btn-primary:hover { background: var(--ember-dark); }
+  .btn-wa { background: var(--wa); color: #fff; } .btn-wa:hover { background: #136234; }
+  .btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
+  .wa-icon { width: 1.2em; height: 1.2em; fill: currentColor; flex: none; }
+
+  /* Header */
+  header.site { position: sticky; top: 0; z-index: 50; background: rgb(31 35 38 / .96); backdrop-filter: blur(6px); color: #fff; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; }
+  .logo { color: #fff; text-decoration: none; font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem; }
+  .logo span { color: var(--flame); }
+  nav.main ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  nav.main a { color: #e9e4de; text-decoration: none; font-size: .95rem; }
+  nav.main a:hover { color: var(--flame); }
+  .header-cta { padding: .55rem 1rem; font-size: .9rem; }
+  @media (max-width: 860px) { nav.main { display: none; } }
+
+  /* Hero */
+  .hero { background: radial-gradient(ellipse at 80% 20%, rgb(184 68 28 / .45), transparent 55%), linear-gradient(160deg, var(--charcoal), var(--slate)); color: #fff; padding-top: clamp(3rem, 8vw, 6rem); }
+  .hero .wrap { display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 900px) { .hero .wrap { grid-template-columns: 1.15fr .85fr; } }
+  .hero h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); }
+  .hero h1 span { color: var(--flame); }
+  .hero .lead { color: #ddd6cf; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+  .trust { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; padding: 0; margin: 0; }
+  .trust li { background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .15); border-radius: 999px; padding: .4rem .9rem; font-size: .9rem; }
+  .stars { color: #ffc94d; letter-spacing: 2px; }
+
+  /* Photo placeholders */
+  .ph { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; display: grid; place-items: center; text-align: center; padding: 1rem; color: #fff; font-size: .85rem;
+        background: linear-gradient(135deg, #3a2a22, #7a3418 55%, #c2622e); }
+  .ph::before { content: "📷 Photo placeholder"; position: absolute; top: .6rem; left: .6rem; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; background: rgb(0 0 0 / .35); padding: .2rem .5rem; border-radius: 6px; }
+  .hero .ph { aspect-ratio: 1; box-shadow: 0 20px 60px rgb(0 0 0 / .4); }
+
+  /* Packages */
+  .grid { display: grid; gap: 1.25rem; }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .pkg { display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; }
+  .pkg.selected { border-color: var(--ember); box-shadow: 0 0 0 3px rgb(184 68 28 / .25), var(--shadow); }
+  .pkg .tag { align-self: flex-start; background: var(--sand); color: var(--ember-dark); font-size: .75rem; font-weight: 700; padding: .2rem .6rem; border-radius: 999px; margin-bottom: .75rem; }
+  .price { font-size: 1.35rem; font-weight: 800; color: var(--charcoal); margin: 0; }
+  .price small { display: block; font-size: .8rem; font-weight: 500; color: var(--muted); }
+  .placeholder { background: #fff3c4; color: #5a4300; padding: 0 .3em; border-radius: 4px; font-weight: 600; }
+  .pkg dl { margin: 1rem 0; display: grid; gap: .6rem; }
+  .pkg dt { font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .pkg dd { margin: 0; }
+  .pkg .btn { margin-top: auto; }
+  .note { background: var(--sand); border-left: 4px solid var(--ember); padding: 1rem 1.25rem; border-radius: 8px; margin-top: 1.5rem; }
+  .menu-lists { margin-top: 2.5rem; }
+  .menu-lists ul { margin: 0; padding-left: 1.1rem; }
+  .menu-lists h3 { font-size: 1.15rem; }
+
+  /* Events & areas */
+  .dark { background: var(--charcoal); color: #f2ede7; }
+  .dark .lead { color: #cfc7bf; } .dark .eyebrow { color: var(--flame); }
+  .events { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .events li { background: var(--slate); border-radius: var(--radius); padding: 1.25rem; border: 1px solid rgb(255 255 255 / .08); }
+  .events .ico { font-size: 1.6rem; display: block; margin-bottom: .4rem; }
+  .areas { margin-top: 3rem; display: grid; gap: 1.5rem; }
+  @media (min-width: 800px) { .areas { grid-template-columns: 1fr 1fr; } }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+  .chips li { border: 1px solid rgb(255 255 255 / .25); border-radius: 999px; padding: .3rem .8rem; font-size: .9rem; }
+  .chips li.core { background: var(--ember); border-color: var(--ember); color: #fff; font-weight: 700; }
+  .dark .card { background: var(--slate); border-color: rgb(255 255 255 / .1); color: inherit; box-shadow: none; }
+
+  /* Gallery & reviews */
+  .gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 2rem; }
+  .gallery figure { margin: 0; }
+  .gallery figcaption { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+  .reviews { margin-top: 3.5rem; }
+
+  /* FAQ */
+  .faq { max-width: 800px; }
+  .faq details { background: #fff; border: 1px solid var(--line); border-radius: 10px; margin-bottom: .75rem; }
+  .faq summary { cursor: pointer; padding: 1rem 3rem 1rem 1.25rem; font-weight: 700; list-style: none; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 1.25rem; top: 50%; translate: 0 -50%; font-size: 1.4rem; color: var(--ember); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details > div { padding: 0 1.25rem 1rem; color: var(--muted); }
+
+  /* Quote form */
+  .quote .wrap { display: grid; gap: 2rem; }
+  @media (min-width: 960px) { .quote .wrap { grid-template-columns: 1.4fr .6fr; align-items: start; } }
+  form .row { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 600px) { form .row { grid-template-columns: 1fr 1fr; } }
+  .field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+  label { font-weight: 600; font-size: .95rem; }
+  label .opt { font-weight: 400; color: var(--muted); }
+  input, select, textarea { font: inherit; padding: .75rem .9rem; border: 1.5px solid #c9bcae; border-radius: 10px; background: #fff; color: var(--ink); width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--ember); outline: none; box-shadow: 0 0 0 3px rgb(184 68 28 / .2); }
+  input:user-invalid, select:user-invalid { border-color: #b00020; }
+  textarea { min-height: 110px; resize: vertical; }
+  .summary { border: 2px solid var(--wa); background: #eef8f1; }
+  .summary h3 { color: var(--wa); }
+  .summary dl { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: 1rem 0 1.5rem; }
+  .summary dt { font-weight: 700; }
+  .summary dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+  .summary .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .contact-card a { font-weight: 700; }
+  .contact-card p { margin-bottom: .75rem; }
+
+  /* Footer */
+  footer.site { background: var(--charcoal); color: #cfc7bf; padding: 3rem 0 6rem; font-size: .95rem; }
+  footer.site .wrap { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  footer.site h2 { font-size: 1.1rem; color: #fff; }
+  footer.site a { color: var(--flame); }
+  footer.site ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .35rem; }
+  footer.site address { font-style: normal; }
+  .copy { grid-column: 1 / -1; border-top: 1px solid rgb(255 255 255 / .1); padding-top: 1.25rem; font-size: .85rem; }
+
+  /* Mobile action bar */
+  .mobile-bar { position: fixed; inset: auto 0 0 0; z-index: 60; display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--charcoal); border-top: 1px solid rgb(255 255 255 / .1); padding-bottom: env(safe-area-inset-bottom); }
+  .mobile-bar a { color: #fff; text-decoration: none; text-align: center; padding: .7rem .25rem; font-size: .85rem; font-weight: 700; display: flex; flex-direction: column; align-items: center; gap: .15rem; }
+  .mobile-bar a.wa { background: var(--wa); }
+  .mobile-bar a.q { background: var(--ember); }
+  @media (min-width: 861px) { .mobile-bar { display: none; } footer.site { padding-bottom: 3rem; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top">Mr Swiss <span>Spit Braai</span></a>
+    <nav class="main" aria-label="Main">
+      <ul>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#events">Events &amp; Areas</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-wa header-cta" href="https://wa.me/27839578964" target="_blank" rel="noopener">
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- 1. HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--flame)">Spit Braai Catering · Midrand &amp; Gauteng</p>
+        <h1>Mr Swiss <span>Spit Braai</span> Services</h1>
+        <p class="lead">Slow-roasted spit braais, flavourful sides and warm, attentive hospitality — delivered or set up on-site for your event in Midrand and across Gauteng. You enjoy your guests; we take care of the fire.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#quote">Request a Quote</a>
+          <a class="btn btn-wa" href="https://wa.me/27839578964" target="_blank" rel="noopener">
+            <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2Z"/></svg>
+            WhatsApp Us Now
+          </a>
+        </div>
+        <ul class="trust">
+          <li><span class="stars" aria-hidden="true">★★★★★</span> 5.0 on Google</li>
+          <li>⏰ Flexible / 24-hour inquiries</li>
+          <li>🚚 Delivery or full on-site setup</li>
+        </ul>
+      </div>
+      <div class="ph" role="img" aria-label="Photo placeholder: whole lamb slow-roasting on a spit over glowing coals">Whole lamb slow-roasting on the spit over glowing coals</div>
+    </div>
+  </section>
+
+  <!-- 2. PACKAGES -->
+  <section id="packages">
+    <div class="wrap">
+      <p class="eyebrow">Packages &amp; Menu</p>
+      <h2>Spit braai packages for every gathering</h2>
+      <p class="lead">Pick a starting point, then tailor the meats, sides and service to suit your crowd. Tap <strong>Choose this package</strong> and we’ll pre-fill your quote request.</p>
+
+      <div class="grid grid-3" style="margin-top:2rem">
+        <article class="card pkg" data-package="Classic Spit Braai">
+          <span class="tag">Most popular for home events</span>
+          <h3>Classic Spit Braai</h3>
+          <p class="price">From <span class="placeholder">R[price]</span> / head<small>Starting rate — exact price to be added</small></p>
+          <dl>
+            <dt>Minimum guests</dt><dd><span class="placeholder">[min. guests, e.g. 30]</span></dd>
+            <dt>Meat (choose 1–2)</dt><dd>Lamb, pork, chicken or beef</dd>
+            <dt>Sides</dt><dd>Roast potatoes, garden salad, garlic rolls</dd>
+            <dt>Service</dt><dd>Drop-off or on-site roasting</dd>
+          </dl>
+          <button class="btn btn-primary" type="button">Choose this package</button>
+        </article>
+
+        <article class="card pkg" data-package="Full Feast & Sides">
+          <span class="tag">Weddings &amp; celebrations</span>
+          <h3>Full Feast &amp; Sides</h3>
+          <p class="price">From <span class="placeholder">R[price]</span> / head<small>Starting rate — exact price to be added</small></p>
+          <dl>
+            <dt>Minimum guests</dt><dd><span class="placeholder">[min. guests, e.g. 50]</span></dd>
+            <dt>Meat (choose 2–3)</dt><dd>Lamb, pork, chicken and/or beef</dd>
+            <dt>Sides</dt><dd>Baby potatoes, 2 salads, pap &amp; gravy, chakalaka, garlic rolls, dessert</dd>
+            <dt>Service</dt><dd>On-site roasting &amp; carving included</dd>
+          </dl>
+          <button class="btn btn-primary" type="button">Choose this package</button>
+        </article>
+
+        <article class="card pkg" data-package="Corporate / Large Event">
+          <span class="tag">100+ guests</span>
+          <h3>Corporate / Large Event</h3>
+          <p class="price">From <span class="placeholder">R[price]</span> / head<small>Custom quote — volume rates available</small></p>
+          <dl>
+            <dt>Minimum guests</dt><dd><span class="placeholder">[min. guests, e.g. 100]</span></dd>
+            <dt>Meat</dt><dd>Multiple spits — mix of lamb, pork, chicken &amp; beef</dd>
+            <dt>Sides</dt><dd>Full sides selection plus desserts, tailored to your menu</dd>
+            <dt>Service</dt><dd>Carving &amp; serving staff, chafing dishes, full setup</dd>
+          </dl>
+          <button class="btn btn-primary" type="button">Choose this package</button>
+        </article>
+      </div>
+
+      <div class="grid grid-3 menu-lists">
+        <div class="card">
+          <h3>🍖 Meat choices</h3>
+          <ul><li>Whole or half lamb on the spit</li><li>Pork (spit-roasted)</li><li>Whole chickens</li><li>Beef cuts</li></ul>
+        </div>
+        <div class="card">
+          <h3>🥗 Classic sides</h3>
+          <ul><li>Roast or baby potatoes</li><li>Garden, potato &amp; pasta salads</li><li>Pap &amp; gravy / chakalaka</li><li>Garlic rolls</li><li>Desserts</li></ul>
+        </div>
+        <div class="card">
+          <h3>➕ Optional add-ons</h3>
+          <ul><li>Carving &amp; serving staff</li><li>Chafing dishes</li><li>Setup &amp; gazebo</li><li><span class="placeholder">[add-on pricing to be added]</span></li></ul>
+        </div>
+      </div>
+
+      <p class="note"><strong>Please note:</strong> final pricing is confirmed after we know your guest count, menu selections and venue distance. Prices shown are starting rates only.</p>
+    </div>
+  </section>
+
+  <!-- 3. EVENTS & AREAS -->
+  <section class="dark" id="events">
+    <div class="wrap">
+      <p class="eyebrow">Events We Cater</p>
+      <h2>From family Sundays to company year-ends</h2>
+      <p class="lead">Every event gets the same care: meat roasted low and slow, generous portions, and a friendly team that keeps the food coming.</p>
+      <ul class="events">
+        <li><span class="ico" aria-hidden="true">🎂</span>Birthdays</li>
+        <li><span class="ico" aria-hidden="true">💍</span>Weddings &amp; Celebrations</li>
+        <li><span class="ico" aria-hidden="true">👨‍👩‍👧‍👦</span>Family Gatherings</li>
+        <li><span class="ico" aria-hidden="true">🕊️</span>Memorials &amp; Funerals</li>
+        <li><span class="ico" aria-hidden="true">💼</span>Corporate Functions</li>
+        <li><span class="ico" aria-hidden="true">🎉</span>Year-End Events</li>
+      </ul>
+
+      <div class="areas">
+        <div class="card">
+          <h3>Where we cater</h3>
+          <p>Based in <strong>Kaalfontein, Midrand</strong> and serving surrounding Gauteng.</p>
+          <ul class="chips">
+            <li class="core">Kaalfontein</li><li class="core">Midrand</li>
+            <li>Johannesburg</li><li>Pretoria</li><li>Centurion</li><li>Tembisa</li><li>Kempton Park</li><li>Sandton</li><li>Fourways</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Travel &amp; setup logistics</h3>
+          <p>Venues further from Midrand may carry a travel fee, included upfront in your quote. For on-site service we need a safe, level outdoor area for the spit and fire, and access to the venue before guests arrive.</p>
+          <p style="margin:0">Not sure if we reach you? <a href="https://wa.me/27839578964" target="_blank" rel="noopener" style="color:var(--flame)">WhatsApp your suburb</a> and we’ll confirm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GALLERY & REVIEWS -->
+  <section id="gallery">
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <h2>Fire, flavour &amp; full tables</h2>
+      <div class="gallery">
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Spit roasting over open coals</div><figcaption>Lamb turning slowly on the spit — hours of patient roasting.</figcaption></figure>
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Carving station</div><figcaption>Fresh carving at the station, served hot to each guest.</figcaption></figure>
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Plated spread</div><figcaption>A full plate: spit-roast meat, potatoes, salads and garlic rolls.</figcaption></figure>
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Event setup</div><figcaption>Gazebo and chafing-dish buffet set up before guests arrive.</figcaption></figure>
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Pap, gravy &amp; chakalaka</div><figcaption>Classic sides: pap with gravy and chakalaka.</figcaption></figure>
+        <figure><div class="ph" role="img" aria-label="Photo placeholder">Team at work</div><figcaption>Our friendly team keeping the food coming.</figcaption></figure>
+      </div>
+
+      <div class="reviews">
+        <p class="eyebrow">Customer Reviews</p>
+        <h2><span class="stars" aria-hidden="true">★★★★★</span> Rated 5.0 on Google</h2>
+        <p class="lead">What our customers mention most. <a href="https://www.google.com/search?q=mr+swiss+spit+braai#lrd=0x4a66341abaffb98d:0x45c9429a9d9dee7b,1,,,," target="_blank" rel="noopener">Read our reviews on Google</a>. <span class="placeholder">[Optional: add verbatim Google reviews with reviewer names here]</span></p>
+        <div class="grid grid-3">
+          <div class="card review"><h3>🍖 Great food</h3><p>Tender, full-flavoured spit-roasted meat and sides that hold their own.</p></div>
+          <div class="card review"><h3>🍽️ Generous portions</h3><p>Guests leave full, with plenty to go around.</p></div>
+          <div class="card review"><h3>🤝 Friendly, professional service</h3><p>An attentive, on-time team that makes hosting stress-free.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAQ -->
+  <section id="faq" style="background:var(--sand)">
+    <div class="wrap faq">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions hosts ask us</h2>
+      <details name="faq">
+        <summary>How early does the team arrive to start the coals and roast?</summary>
+        <div><p>A spit braai is cooked slowly, so we usually arrive several hours before serving time — typically <span class="placeholder">[e.g. 4–5 hours]</span> depending on the meat and guest count. We’ll confirm the exact arrival time with you when we finalise your booking.</p></div>
+      </details>
+      <details name="faq">
+        <summary>Do you offer delivery/drop-off as well as full on-site spit and carving service?</summary>
+        <div><p>Yes, both. Choose drop-off if you’d like the cooked meat and sides delivered ready to serve, or full on-site service where we roast at your venue and carve and serve for your guests.</p></div>
+      </details>
+      <details name="faq">
+        <summary>How far in advance should we book for weekends or peak seasons?</summary>
+        <div><p>Weekends, December and public holidays fill up fast — we recommend booking <span class="placeholder">[e.g. 3–4 weeks]</span> ahead. For other dates, send us a message anyway; we’re flexible and will always try to help at shorter notice.</p></div>
+      </details>
+      <details name="faq">
+        <summary>Can you accommodate dietary preferences such as halaal-friendly sourcing or vegetarian sides?</summary>
+        <div><p>Please tell us about any dietary needs when you request a quote. We can include vegetarian sides and discuss halaal-friendly meat sourcing and preparation for your event.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 6. QUOTE FORM -->
+  <section class="quote" id="quote">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Request a Quote</p>
+        <h2>Tell us about your event</h2>
+        <p class="lead">Fill in what you know — we’ll reply with a quote. Prefer to chat? <a href="https://wa.me/27839578964" target="_blank" rel="noopener">WhatsApp us</a>.</p>
+
+        <form id="quote-form" class="card" novalidate>
+          <div class="row">
+            <div class="field"><label for="name">Full Name</label><input id="name" name="name" autocomplete="name" pattern=".*\S.*" required></div>
+            <div class="field"><label for="phone">Phone / WhatsApp Number</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+\(\)\s\-]{9,20}" placeholder="e.g. 082 123 4567" required></div>
+          </div>
+          <div class="field"><label for="email">Email <span class="opt">(optional)</span></label><input id="email" name="email" type="email" autocomplete="email"></div>
+          <div class="row">
+            <div class="field"><label for="date">Event Date</label><input id="date" name="date" type="date" required></div>
+            <div class="field"><label for="time">Function Time</label><input id="time" name="time" type="time" required></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="guests">Estimated Guest Count</label><input id="guests" name="guests" type="number" min="1" max="5000" inputmode="numeric" required></div>
+            <div class="field"><label for="area">Venue Suburb / Area</label><input id="area" name="area" placeholder="e.g. Midrand, Centurion" pattern=".*\S.*" required></div>
+          </div>
+          <div class="field">
+            <label for="package">Preferred Package</label>
+            <select id="package" name="package">
+              <option value="">Not sure yet — please advise</option>
+              <option>Classic Spit Braai</option>
+              <option>Full Feast &amp; Sides</option>
+              <option>Corporate / Large Event</option>
+            </select>
+          </div>
+          <div class="field"><label for="menu">Menu Notes <span class="opt">(meats, sides, add-ons, dietary needs)</span></label><textarea id="menu" name="menu" maxlength="1000"></textarea></div>
+          <div class="field"><label for="details">Additional Details <span class="opt">(optional)</span></label><textarea id="details" name="details" maxlength="1000"></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Request My Quote</button>
+        </form>
+
+        <div id="summary" class="card summary" hidden tabindex="-1" aria-live="polite">
+          <h3>✅ Thank you — here’s your quote request</h3>
+          <p>Please check your details below, then tap <strong>Send via WhatsApp</strong> so they reach us instantly.</p>
+          <dl id="summary-list"></dl>
+          <div class="actions">
+            <a id="wa-send" class="btn btn-wa" href="https://wa.me/27839578964" target="_blank" rel="noopener">Send via WhatsApp</a>
+            <button id="edit" class="btn btn-ghost" type="button">Edit details</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card contact-card" aria-label="Direct contact">
+        <h3>Contact us directly</h3>
+        <p>📞 <a href="tel:+27839578964">083 957 8964</a></p>
+        <p>💬 <a href="https://wa.me/27839578964" target="_blank" rel="noopener">WhatsApp 083 957 8964</a></p>
+        <p>📍 991 Hog Fish St, Kaalfontein, Midrand, 1685</p>
+        <p>⏰ Flexible / 24-hour inquiries</p>
+        <a class="btn btn-wa" style="width:100%" href="https://wa.me/27839578964" target="_blank" rel="noopener">WhatsApp Us Now</a>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <h2>Mr Swiss Spit Braai Services</h2>
+      <p>Slow-roasted spit braai catering for Midrand, Johannesburg, Pretoria and surrounding Gauteng.</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <address>
+        991 Hog Fish St, Kaalfontein,<br>Midrand, 1685<br>
+        <a href="tel:+27839578964">083 957 8964</a><br>
+        <a href="https://wa.me/27839578964" target="_blank" rel="noopener">WhatsApp us</a>
+      </address>
+    </div>
+    <nav aria-label="Footer">
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="#packages">Packages &amp; Menu</a></li>
+        <li><a href="#events">Events &amp; Service Areas</a></li>
+        <li><a href="#gallery">Gallery &amp; Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+      </ul>
+    </nav>
+    <p class="copy">© <span id="year"></span> Mr Swiss Spit Braai Services. All rights reserved.</p>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+27839578964"><span aria-hidden="true">📞</span>Call</a>
+  <a class="wa" href="https://wa.me/27839578964" target="_blank" rel="noopener"><span aria-hidden="true">💬</span>WhatsApp</a>
+  <a class="q" href="#quote"><span aria-hidden="true">📝</span>Quote</a>
+</nav>
+
+<script>
+  const WA = 'https://wa.me/27839578964';
+  const form = document.getElementById('quote-form');
+  const pkgSelect = document.getElementById('package');
+  const cards = document.querySelectorAll('.pkg');
+  const summary = document.getElementById('summary');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Local date, not UTC, so "today" is correct in SAST late at night.
+  const now = new Date();
+  document.getElementById('date').min = new Date(now - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+  // Package selection: highlight card + pre-fill form, and keep them in sync both ways.
+  function highlight(name) {
+    cards.forEach(c => c.classList.toggle('selected', c.dataset.package === name));
+  }
+  cards.forEach(card => card.querySelector('button').addEventListener('click', () => {
+    pkgSelect.value = card.dataset.package;
+    highlight(card.dataset.package);
+    document.getElementById('quote').scrollIntoView();
+    pkgSelect.focus({ preventScroll: true });
+  }));
+  pkgSelect.addEventListener('change', () => highlight(pkgSelect.value));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const labels = { name: 'Name', phone: 'Phone / WhatsApp', email: 'Email', date: 'Event date', time: 'Function time',
+                     guests: 'Guest count', area: 'Venue area', package: 'Package', menu: 'Menu notes', details: 'Additional details' };
+    const data = new FormData(form);
+    const list = document.getElementById('summary-list');
+    list.replaceChildren();
+    const lines = ['Hi Mr Swiss Spit Braai, I would like a quote:'];
+    for (const [key, label] of Object.entries(labels)) {
+      const value = (data.get(key) || '').trim() || (key === 'package' ? 'Not sure yet' : '');
+      if (!value) continue;
+      const dt = document.createElement('dt'); dt.textContent = label;
+      const dd = document.createElement('dd'); dd.textContent = value; // textContent: no HTML injection
+      list.append(dt, dd);
+      lines.push(`${label}: ${value}`);
+    }
+    document.getElementById('wa-send').href = `${WA}?text=${encodeURIComponent(lines.join('\n'))}`;
+    form.hidden = true;
+    summary.hidden = false;
+    summary.focus();
+  });
+
+  document.getElementById('edit').addEventListener('click', () => {
+    summary.hidden = true;
+    form.hidden = false;
+    document.getElementById('name').focus();
+  });
+</script>
+</body>
+</html>
