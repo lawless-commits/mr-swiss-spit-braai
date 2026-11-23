@@ -69,11 +69,10 @@
   .trust li { background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .15); border-radius: 999px; padding: .4rem .9rem; font-size: .9rem; }
   .stars { color: #ffc94d; letter-spacing: 2px; }
 
-  /* Photo placeholders */
-  .ph { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; display: grid; place-items: center; text-align: center; padding: 1rem; color: #fff; font-size: .85rem;
-        background: linear-gradient(135deg, #3a2a22, #7a3418 55%, #c2622e); }
-  .ph::before { content: "📷 Photo placeholder"; position: absolute; top: .6rem; left: .6rem; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; background: rgb(0 0 0 / .35); padding: .2rem .5rem; border-radius: 6px; }
+  /* Photos (sample stock from Pexels in images/ — swap for the client's own, same filenames) */
+  .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); background: var(--slate); }
   .hero .ph { aspect-ratio: 1; box-shadow: 0 20px 60px rgb(0 0 0 / .4); }
+  @media (max-width: 899px) { .hero .ph { aspect-ratio: 16 / 10; } }
 
   /* Packages */
   .grid { display: grid; gap: 1.25rem; }
@@ -108,7 +107,8 @@
   .dark .card { background: var(--slate); border-color: rgb(255 255 255 / .1); color: inherit; box-shadow: none; }
 
   /* Gallery & reviews */
-  .gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 2rem; }
+  .gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); margin-top: 2rem; } /* 3 cols on desktop: 6 photos, no half row */
+  .note-small { font-size: .8rem; color: var(--muted); margin-top: 1rem; }
   .gallery figure { margin: 0; }
   .gallery figcaption { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
   .reviews { margin-top: 3.5rem; }
@@ -202,7 +202,7 @@
           <li>🚚 Delivery or full on-site setup</li>
         </ul>
       </div>
-      <div class="ph" role="img" aria-label="Photo placeholder: whole lamb slow-roasting on a spit over glowing coals">Whole lamb slow-roasting on the spit over glowing coals</div>
+      <img class="ph" src="images/spit-roast-fire.jpg" alt="Meat slow-roasting on a spit over a wood fire" width="1000" height="1333" fetchpriority="high">
     </div>
   </section>
 
@@ -312,13 +312,14 @@
       <p class="eyebrow">Gallery</p>
       <h2>Fire, flavour &amp; full tables</h2>
       <div class="gallery">
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Spit roasting over open coals</div><figcaption>Lamb turning slowly on the spit — hours of patient roasting.</figcaption></figure>
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Carving station</div><figcaption>Fresh carving at the station, served hot to each guest.</figcaption></figure>
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Plated spread</div><figcaption>A full plate: spit-roast meat, potatoes, salads and garlic rolls.</figcaption></figure>
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Event setup</div><figcaption>Gazebo and chafing-dish buffet set up before guests arrive.</figcaption></figure>
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Pap, gravy &amp; chakalaka</div><figcaption>Classic sides: pap with gravy and chakalaka.</figcaption></figure>
-        <figure><div class="ph" role="img" aria-label="Photo placeholder">Team at work</div><figcaption>Our friendly team keeping the food coming.</figcaption></figure>
+        <figure><img class="ph" src="images/spit-chickens.jpg" alt="Whole chickens turning on spits over smoking coals" width="1000" height="667" loading="lazy"><figcaption>Slow spit roasting over open coals — hours of patient turning.</figcaption></figure>
+        <figure><img class="ph" src="images/carving.jpg" alt="Roasted meat being carved on a wooden board beside grilled vegetables" width="1000" height="667" loading="lazy"><figcaption>Fresh carving, served hot to each guest.</figcaption></figure>
+        <figure><img class="ph" src="images/plated-chicken.jpg" alt="Roast chicken on a platter with potatoes and greens" width="1000" height="1500" loading="lazy"><figcaption>Roast meat with potatoes and fresh sides.</figcaption></figure>
+        <figure><img class="ph" src="images/chafing-dishes.jpg" alt="Row of open chafing dishes keeping food warm on a buffet" width="1000" height="667" loading="lazy"><figcaption>Chafing-dish buffet, set up before guests arrive.</figcaption></figure>
+        <figure><img class="ph" src="images/salads.jpg" alt="Bowls of fresh salads lined up on a table" width="1000" height="750" loading="lazy"><figcaption>Fresh salads and classic sides.</figcaption></figure>
+        <figure><img class="ph" src="images/event-buffet.jpg" alt="Full outdoor event buffet with salads and dishes under a marquee" width="1000" height="667" loading="lazy"><figcaption>A full spread for your celebration.</figcaption></figure>
       </div>
+      <p class="note-small">Sample photos — our own event photos coming soon.</p>
 
       <div class="reviews">
         <p class="eyebrow">Customer Reviews</p>
